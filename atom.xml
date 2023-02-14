@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>纯情小鲨鱼</title>
+  <title>灵性小鲨鱼</title>
   
   <subtitle>小鲨鱼的书架</subtitle>
   <link href="https://zhaohe6.github.io/atom.xml" rel="self"/>
@@ -28,7 +28,7 @@
       
         
         
-    <summary type="html">&lt;h4 id=&quot;你不知道的JS-中卷-第一部分&quot;&gt;&lt;a href=&quot;#你不知道的JS-中卷-第一部分&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -55,7 +55,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;异步和性能&quot;&gt;&lt;a href=&quot;#异步和性能&quot; class=&quot;headerlink&quot; title=&quot;异步和性能&quot;&gt;&lt;/a&gt;异步和性能&lt;/h3&gt;&lt;h4 id=&quot;1-异步：现在与将来&quot;&gt;&lt;a href=&quot;#1-异步：现在与将来&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -82,7 +82,7 @@
       
         
         
-    <summary type="html">&lt;h4 id=&quot;你不知道的JS（上卷）第一部分-作用域和闭包&quot;&gt;&lt;a href=&quot;#你不知道的JS（上卷）第一部分-作用域和闭包&quot; class=&quot;headerlink&quot; title=&quot;你不知道的JS（上卷）第一部分 作用域和闭包&quot;&gt;&lt;/a&gt;你不知道的JS（上卷）第一部分</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -109,7 +109,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;你不知道的JS-上卷-第二部分&quot;&gt;&lt;a href=&quot;#你不知道的JS-上卷-第二部分&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -136,7 +136,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
