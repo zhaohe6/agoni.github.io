@@ -4,16 +4,34 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="线性回归预测, 灵性小鲨鱼">
-    <meta name="description" content="概述本例主要讲述通过梯度下降算法求单变量线性回归模型的参数问题。损失函数是通过最小二乘法进行计算。
-程序运行步骤
-读取数据集
-z-score 标准化
-通过梯度下降算法更新参数
-参数更新之后继续迭代
-在第三步和第四步之间进行循环
+    <meta name="keywords" content="python数据清洗, 灵性小鲨鱼">
+    <meta name="description" content="数据清洗数据集介绍
 
-数学公式推">
+
+#
+Column
+Non-Null Count
+Dtype
+解释
+
+
+
+0
+SNo
+306429
+int64
+编号
+
+
+1
+ObservationDate
+306429
+object
+观测日期
+
+
+2
+Provinc">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -25,7 +43,7 @@ z-score 标准化
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>线性回归预测 | 灵性小鲨鱼</title>
+    <title>python数据清洗 | 灵性小鲨鱼</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -321,12 +339,12 @@ z-score 标准化
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">线性回归预测</h1>
+                    <h1 class="description center-align post-title">python数据清洗</h1>
                 </div>
             </div>
         </div>
@@ -354,12 +372,8 @@ z-score 标准化
                                 <span class="chip bg-color">机器学习</span>
                             </a>
                         
-                            <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
-                                <span class="chip bg-color">线性回归</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
-                                <span class="chip bg-color">梯度下降</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
                     </div>
@@ -383,7 +397,7 @@ z-score 标准化
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-04-15
+                    2023-05-21
                 </div>
                 
 
@@ -392,14 +406,14 @@ z-score 标准化
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    664
+                    424
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -414,92 +428,109 @@ z-score 标准化
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>本例主要讲述通过梯度下降算法求单变量线性回归模型的参数问题。损失函数是通过最小二乘法进行计算。</p>
-<h3 id="程序运行步骤"><a href="#程序运行步骤" class="headerlink" title="程序运行步骤"></a>程序运行步骤</h3><ul>
-<li>读取数据集</li>
-<li>z-score 标准化</li>
-<li>通过梯度下降算法更新参数</li>
-<li>参数更新之后继续迭代</li>
-<li>在第三步和第四步之间进行循环</li>
-</ul>
-<h3 id="数学公式推导"><a href="#数学公式推导" class="headerlink" title="数学公式推导"></a>数学公式推导</h3><p>最小二乘法：<br>$$<br>J(\theta_0, \theta_1)&#x3D;(1&#x2F;2m)\sum_{i&#x3D;1}^m(h(x^i)-y^i)^2<br>$$</p>
-<blockquote>
-<p>解释：样本的数量是m个，h(x)是预测值，y是真实值，通过求出两者的差，然后平方求和算出来的值就是这个 theta 下的损失值。</p>
-</blockquote>
-<p>梯度下降：<br>$$<br>\theta_j&#x3D;\theta_j-\alpha*\frac{\partial j(\theta_0,\theta_1)}{\partial \theta_j}<br>$$</p>
-<blockquote>
-<p>j&#x3D;1,2;alpha 是学习率，可以设置为0.01或者0.001，学习率越小学习迭代的次数就越多，越大迭代的次数越少，但是可能错过损失函数的最小值。偏导数代表的是一个方向，我们沿着这个方向进行梯度下降。</p>
-</blockquote>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>以下代码通过 Python 实现：</p>
-<ol>
-<li>LinearReg 类的实现</li>
-</ol>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-
-
-<span class="token keyword">class</span> <span class="token class-name">LinearReg</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> feature<span class="token punctuation">,</span> label<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>feature <span class="token operator">=</span> feature
-        self<span class="token punctuation">.</span>label <span class="token operator">=</span> label
-        self<span class="token punctuation">.</span>theta <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 将theta的初始值设置为0</span>
-
-    <span class="token keyword">def</span> <span class="token function">gradient_decent</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>gradient_step<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 执行迭代函数</span>
-        <span class="token keyword">return</span> <span class="token number">0</span>
-
-    <span class="token keyword">def</span> <span class="token function">gradient_step</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        learn_rate <span class="token operator">=</span> <span class="token number">0.01</span>  <span class="token comment" spellcheck="true"># 学习率设置为0.01</span>
-        group_num <span class="token operator">=</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>label<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 获取样本的数量</span>
-        feature <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>self<span class="token punctuation">.</span>feature<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 将样本的特征转为矩阵</span>
-        theta <span class="token operator">=</span> self<span class="token punctuation">.</span>theta
-        label <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>self<span class="token punctuation">.</span>label<span class="token punctuation">)</span><span class="token punctuation">.</span>T  <span class="token comment" spellcheck="true"># 将样本的特征转为矩阵，并进行转置，因为 lable是一个以为数组（1xn）</span>
-        <span class="token comment" spellcheck="true"># print(self.theta)</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 迭代200次</span>
-            margin <span class="token operator">=</span> feature <span class="token operator">*</span> theta<span class="token punctuation">.</span>T <span class="token operator">-</span> label  <span class="token comment" spellcheck="true"># 真实值和估计值之间的差</span>
-            temp <span class="token operator">=</span> theta <span class="token operator">-</span> <span class="token punctuation">(</span>learn_rate <span class="token operator">/</span> group_num<span class="token punctuation">)</span> <span class="token operator">*</span> margin<span class="token punctuation">.</span>T <span class="token operator">*</span> feature  <span class="token comment" spellcheck="true"># 更新theta</span>
-            theta <span class="token operator">=</span> temp
-
-        self<span class="token punctuation">.</span>theta <span class="token operator">=</span> theta  <span class="token comment" spellcheck="true"># 将更新完的 theta 赋值给我们的初始化中的 theta</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'theta = &amp;#123;theta&amp;#125; step = &amp;#123;(learn_rate / group_num) * (margin.T * feature)&amp;#125;'</span><span class="token punctuation">)</span>
+                <h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><h3 id="数据集介绍"><a href="#数据集介绍" class="headerlink" title="数据集介绍"></a>数据集介绍</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Column</th>
+<th>Non-Null Count</th>
+<th>Dtype</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>SNo</td>
+<td>306429</td>
+<td>int64</td>
+<td>编号</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ObservationDate</td>
+<td>306429</td>
+<td>object</td>
+<td>观测日期</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Province&#x2F;State</td>
+<td>228329</td>
+<td>object</td>
+<td>省份</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Country&#x2F;Region</td>
+<td>306429</td>
+<td>object</td>
+<td>国家</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Last Update</td>
+<td>306429</td>
+<td>object</td>
+<td>最近更新日期</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Confirmed</td>
+<td>306429</td>
+<td>int64</td>
+<td>确诊数量</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Deaths</td>
+<td>306429</td>
+<td>int64</td>
+<td>死亡数量</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Recovered</td>
+<td>306429</td>
+<td>int64</td>
+<td>康复数量</td>
+</tr>
+</tbody></table>
+<p>本数据集使用kaggle中的 covid-19 数据集，链接如下：</p>
+<h3 id="数据清洗代码"><a href="#数据清洗代码" class="headerlink" title="数据清洗代码"></a>数据清洗代码</h3><h4 id="1-获取数据集信息"><a href="#1-获取数据集信息" class="headerlink" title="1. 获取数据集信息"></a>1. 获取数据集信息</h4><pre class=" language-python"><code class="language-python">dataset <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'./covid_19_data/covid_19_data.csv'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dataset<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 可以查看缺失值和未缺失值的数量</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dataset<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 可以获取数值列的数量、平均值、方差、最小值、最大值</span>
 </code></pre>
-<ol start="2">
-<li>main.py</li>
-</ol>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plb
-<span class="token keyword">from</span> linearRegression <span class="token keyword">import</span> LinearReg
-<span class="token keyword">from</span> sklearn <span class="token keyword">import</span> preprocessing
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    scaler <span class="token operator">=</span> preprocessing<span class="token punctuation">.</span>StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    result <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'./data/advertising.csv'</span><span class="token punctuation">)</span>
-    x <span class="token operator">=</span> result<span class="token punctuation">[</span><span class="token string">'wechat'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>values
-    y <span class="token operator">=</span> result<span class="token punctuation">[</span><span class="token string">'sales'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>values
-    xx <span class="token operator">=</span> scaler<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 标准化操作</span>
-    yy <span class="token operator">=</span> scaler<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 标准化操作</span>
-
-    x_line <span class="token operator">=</span> xx<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    y_line <span class="token operator">=</span> <span class="token number">0.78</span> <span class="token operator">*</span> x_line <span class="token operator">+</span> <span class="token number">0.0</span>  <span class="token comment" spellcheck="true"># 最后得到的theta参数是0.78（斜率）和0.0（截距）</span>
-    xx_addrow <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    yy_reduce <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>xx<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        xx_addrow<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> xx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">## 在特征的最前面添加一列 1，是为了寻找最佳的截距</span>
-        yy_reduce<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>yy<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    plb<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>xx<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> yy_reduce<span class="token punctuation">)</span>
-    plb<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x_line<span class="token punctuation">,</span> y_line<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'red'</span><span class="token punctuation">)</span>
-    plb<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    linear_reg <span class="token operator">=</span> LinearReg<span class="token punctuation">(</span>xx_addrow<span class="token punctuation">,</span> yy_reduce<span class="token punctuation">)</span>
-    res <span class="token operator">=</span> linear_reg<span class="token punctuation">.</span>gradient_decent<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<p>第二行代码输出如下：</p>
+<p><img src="/2023/05/21/python-shu-ju-qing-xi/image-20230522115847847.png" alt="image-20230522115847847"></p>
+<p>第三行代码输入如下：</p>
+<p><img src="/2023/05/21/python-shu-ju-qing-xi/image-20230522120407062.png" alt="image-20230522120407062"></p>
+<h4 id="2-统计某一列种类信息"><a href="#2-统计某一列种类信息" class="headerlink" title="2. 统计某一列种类信息"></a>2. 统计某一列种类信息</h4><pre class=" language-python"><code class="language-python">categories_num <span class="token operator">=</span> dataset<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>nunique<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 统计第二列出现的不同种类的数量</span>
+column_categories <span class="token operator">=</span> dataset<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>unique<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 统计第二列不同种类都是什么</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'种类数: '</span><span class="token punctuation">,</span> categories_num<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"不同种类: "</span><span class="token punctuation">,</span> column_categories<span class="token punctuation">)</span>
 </code></pre>
-<ol start="3">
-<li>运行结果展示</li>
-</ol>
-<p><img src="/./%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E9%A2%84%E6%B5%8B/linearreg.png" alt="直线拟合旧路径"></p>
-<p><img src="/2023/04/15/xian-xing-hui-gui-yu-ce/linearreg.png" alt="新路径"></p>
 <blockquote>
-<p>如有不足，欢迎指正！</p>
+<p>注意上述代码使用的是iloc[: , 2]函数，2是索引，等价于loc[:, ‘Province&#x2F;State’]，就是把索引换成了列名。</p>
 </blockquote>
+<p>输入结果如下：</p>
+<p><img src="/2023/05/21/python-shu-ju-qing-xi/image-20230522120909870.png" alt="image-20230522120909870"></p>
+<h4 id="4-通过可视化的方法查看缺失值"><a href="#4-通过可视化的方法查看缺失值" class="headerlink" title="4. 通过可视化的方法查看缺失值"></a>4. 通过可视化的方法查看缺失值</h4><p>代码如下:</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> missingno <span class="token keyword">as</span> msno
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+dataset <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'./covid_19_data/covid_19_data.csv'</span><span class="token punctuation">)</span>
+msno<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>df<span class="token operator">=</span>dataset<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>可视化图如下：</p>
+<p><img src="/2023/05/21/python-shu-ju-qing-xi/image-20230522121553014.png" alt="image-20230522121553014+python数据清洗/"></p>
+<blockquote>
+<p>白色缝隙表示缺失值，从图中可以看出，只有第三列 Province&#x2F;State 有缺失值。</p>
+</blockquote>
+<h5 id="5-缺失值填补"><a href="#5-缺失值填补" class="headerlink" title="5. 缺失值填补"></a>5. 缺失值填补</h5><p>填补的方式可以用本列的中位数或者平均数，也可以用unknown，具体代码如下：</p>
+<pre class=" language-python"><code class="language-python"> dataset<span class="token punctuation">[</span><span class="token string">'Province/State'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">'Unknown'</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code></pre>
+<p>上述代码使用 ‘Unknown’进行填充，填充之后重新绘制图片，结果如下图所示：</p>
+<p><img src="/2023/05/21/python-shu-ju-qing-xi/image-20230522122105535.png" alt="image-20230522122105535"></p>
 
                 
             </div>
@@ -526,7 +557,7 @@ z-score 标准化
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhaohe6.github.io/2023/04/15/xian-xing-hui-gui-yu-ce/">https://zhaohe6.github.io/2023/04/15/xian-xing-hui-gui-yu-ce/</a>
+                    <a href="https://zhaohe6.github.io/2023/05/21/python-shu-ju-qing-xi/">https://zhaohe6.github.io/2023/05/21/python-shu-ju-qing-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -568,12 +599,8 @@ z-score 标准化
                                     <span class="chip bg-color">机器学习</span>
                                 </a>
                             
-                                <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
-                                    <span class="chip bg-color">线性回归</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
-                                    <span class="chip bg-color">梯度下降</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
                         </div>
@@ -919,9 +946,10 @@ z-score 标准化
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/05/21/python-shu-ju-qing-xi/">
                     <div class="card-image">
@@ -939,9 +967,9 @@ z-score 标准化
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -954,6 +982,7 @@ z-score 标准化
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -976,13 +1005,13 @@ z-score 标准化
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/01/11/ni-bu-zhi-dao-de-js-zhong-juan-di-yi-bu-fen/">
+                <a href="/2023/04/15/xian-xing-hui-gui-yu-ce/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="你不知道的JS中卷第一部分">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="线性回归预测">
                         
-                        <span class="card-title">你不知道的JS中卷第一部分</span>
+                        <span class="card-title">线性回归预测</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -993,14 +1022,14 @@ z-score 标准化
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
                                 </a>
                             
                             
@@ -1010,12 +1039,16 @@ z-score 标准化
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
                     </a>
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
+                        <span class="chip bg-color">线性回归</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
+                        <span class="chip bg-color">梯度下降</span>
                     </a>
                     
                 </div>
@@ -1136,13 +1169,6 @@ z-score 标准化
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-    });
-</script>
 
 
 
