@@ -4,8 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 待到雪花开成海">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="Git常用命令与规范, 待到雪花开成海">
+    <meta name="description" content="常用命令git branch -a
+
+
+解释：查看所有的分支，包括本地分支和远程分支。白色的代表本地分支，绿色的代表本地工作分支，共色的代表远程分支，HEAD指向origin&amp;#x2F;main表示远程的默认分支是main
+
+
+git br">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +23,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 待到雪花开成海</title>
+    <title>Git常用命令与规范 | 待到雪花开成海</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -313,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">Git常用命令与规范</h1>
                 </div>
             </div>
         </div>
@@ -342,27 +348,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
-                                <span class="chip bg-color">博客开发工具</span>
+                            <a href="/tags/Git%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/">
+                                <span class="chip bg-color">-Git代码管理</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                工具
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -371,7 +364,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-07
+                    2024-04-30
                 </div>
                 
 
@@ -380,7 +373,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    350
                 </div>
                 
 
@@ -402,19 +395,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre><code>git branch -a
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<blockquote>
+<p>解释：查看所有的分支，包括本地分支和远程分支。白色的代表本地分支，绿色的代表本地工作分支，共色的代表远程分支，HEAD指向origin&#x2F;main表示远程的默认分支是main</p>
+</blockquote>
+<p><img src="/2024/04/30/git-chang-yong-ming-ling-yu-gui-fan/image-20240430114141556.png" alt="image-20240430114141556"></p>
+<pre><code>git branch --set-upstream-to origin/zh-branch-remote
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
+<blockquote>
+<p>解释：将本地当前所在分支和远程zh-branch-remote分支建立映射关系。这个命令其实没有什么用，如果不用上面的命令手动建立联系，我们用-vv参数是看不到映射关系的。我们一般保证本地分支和远程的分支是同一个名字，之后使用</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push origin zhbranch
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
+<blockquote>
+<p>即可，这样就会在远程创建一个同名的分支，并且同名分支和本地分支会建立联系，但是使用-vv命令并不能看到建立的映射关系，所以-vv命令不怎么智能，不要以来这个命令。随后开发完成之后使用</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push origin zhbranch
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<blockquote>
+<p>这个命令即可将本地分支推送到远程对应名字的分支</p>
+</blockquote>
+<p><img src="/2024/04/30/git-chang-yong-ming-ling-yu-gui-fan/image-20240430121319536.png" alt="image-20240430121319536"></p>
+<h3 id="多人协作步骤"><a href="#多人协作步骤" class="headerlink" title="多人协作步骤"></a>多人协作步骤</h3><ol>
+<li><p>克隆代码到本地</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token string">""</span>
+</code></pre>
+</li>
+<li><p>创建自己的分支</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -b newbranch
+</code></pre>
+</li>
+<li><p>编写代码</p>
+</li>
+<li><p>提交之前pull一下合并代码</p>
+</li>
+<li><p>有冲突的地方解决一下冲突</p>
+</li>
+<li><p>push到远程仓库自己名字的分支</p>
+</li>
+</ol>
 
                 
             </div>
@@ -441,7 +461,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhaohe6.github.io/2021/01/07/hello-world/">https://zhaohe6.github.io/2021/01/07/hello-world/</a>
+                    <a href="https://zhaohe6.github.io/2024/04/30/git-chang-yong-ming-ling-yu-gui-fan/">https://zhaohe6.github.io/2024/04/30/git-chang-yong-ming-ling-yu-gui-fan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -479,12 +499,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
-                                    <span class="chip bg-color">博客开发工具</span>
+                                <a href="/tags/Git%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/">
+                                    <span class="chip bg-color">-Git代码管理</span>
                                 </a>
                             
                         </div>
@@ -830,70 +846,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/01/08/ni-bu-zhi-dao-de-js-shang-juan-di-er-bu-fen/">
+                <a href="/2024/04/30/git-chang-yong-ming-ling-yu-gui-fan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="你不知道的JS上卷第二部分">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Git常用命令与规范">
                         
-                        <span class="card-title">你不知道的JS上卷第二部分</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-08
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/01/07/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Git常用命令与规范</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -904,16 +868,12 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-30
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    工具
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhao He
                             
                         </span>
                     </div>
@@ -922,12 +882,61 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Git%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">-Git代码管理</span>
                     </a>
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">博客开发工具</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/05/21/python-shu-ju-qing-xi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="python数据清洗">
+                        
+                        <span class="card-title">python数据清洗</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
@@ -1338,4 +1347,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+</body>
+
+</html>

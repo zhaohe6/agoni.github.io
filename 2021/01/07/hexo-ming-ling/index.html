@@ -4,34 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python数据清洗, 待到雪花开成海">
-    <meta name="description" content="数据清洗数据集介绍
-
-
-#
-Column
-Non-Null Count
-Dtype
-解释
-
-
-
-0
-SNo
-306429
-int64
-编号
-
-
-1
-ObservationDate
-306429
-object
-观测日期
-
-
-2
-Provinc">
+    <meta name="keywords" content="Hello World, 待到雪花开成海">
+    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -43,7 +17,7 @@ Provinc">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python数据清洗 | 待到雪花开成海</title>
+    <title>Hello World | 待到雪花开成海</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -344,7 +318,7 @@ Provinc">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python数据清洗</h1>
+                    <h1 class="description center-align post-title">Hello World</h1>
                 </div>
             </div>
         </div>
@@ -368,12 +342,12 @@ Provinc">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">机器学习</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">博客开发工具</span>
                             </a>
                         
                     </div>
@@ -384,8 +358,8 @@ Provinc">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                机器学习
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                工具
                             </a>
                         
                     </div>
@@ -397,7 +371,7 @@ Provinc">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-21
+                    2021-01-07
                 </div>
                 
 
@@ -406,7 +380,7 @@ Provinc">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    424
+                    73
                 </div>
                 
 
@@ -428,109 +402,19 @@ Provinc">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><h3 id="数据集介绍"><a href="#数据集介绍" class="headerlink" title="数据集介绍"></a>数据集介绍</h3><table>
-<thead>
-<tr>
-<th>#</th>
-<th>Column</th>
-<th>Non-Null Count</th>
-<th>Dtype</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>SNo</td>
-<td>306429</td>
-<td>int64</td>
-<td>编号</td>
-</tr>
-<tr>
-<td>1</td>
-<td>ObservationDate</td>
-<td>306429</td>
-<td>object</td>
-<td>观测日期</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Province&#x2F;State</td>
-<td>228329</td>
-<td>object</td>
-<td>省份</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Country&#x2F;Region</td>
-<td>306429</td>
-<td>object</td>
-<td>国家</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Last Update</td>
-<td>306429</td>
-<td>object</td>
-<td>最近更新日期</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Confirmed</td>
-<td>306429</td>
-<td>int64</td>
-<td>确诊数量</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Deaths</td>
-<td>306429</td>
-<td>int64</td>
-<td>死亡数量</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Recovered</td>
-<td>306429</td>
-<td>int64</td>
-<td>康复数量</td>
-</tr>
-</tbody></table>
-<p>本数据集使用kaggle中的 covid-19 数据集，链接如下：</p>
-<h3 id="数据清洗代码"><a href="#数据清洗代码" class="headerlink" title="数据清洗代码"></a>数据清洗代码</h3><h4 id="1-获取数据集信息"><a href="#1-获取数据集信息" class="headerlink" title="1. 获取数据集信息"></a>1. 获取数据集信息</h4><pre class=" language-python"><code class="language-python">dataset <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'./covid_19_data/covid_19_data.csv'</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>dataset<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 可以查看缺失值和未缺失值的数量</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>dataset<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 可以获取数值列的数量、平均值、方差、最小值、最大值</span>
+                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
 </code></pre>
-<p>第二行代码输出如下：</p>
-<p><img src="/2023/05/21/python-shu-ju-qing-xi/image-20230522115847847.png" alt="image-20230522115847847"></p>
-<p>第三行代码输入如下：</p>
-<p><img src="/2023/05/21/python-shu-ju-qing-xi/image-20230522120407062.png" alt="image-20230522120407062"></p>
-<h4 id="2-统计某一列种类信息"><a href="#2-统计某一列种类信息" class="headerlink" title="2. 统计某一列种类信息"></a>2. 统计某一列种类信息</h4><pre class=" language-python"><code class="language-python">categories_num <span class="token operator">=</span> dataset<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>nunique<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 统计第二列出现的不同种类的数量</span>
-column_categories <span class="token operator">=</span> dataset<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>unique<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 统计第二列不同种类都是什么</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'种类数: '</span><span class="token punctuation">,</span> categories_num<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"不同种类: "</span><span class="token punctuation">,</span> column_categories<span class="token punctuation">)</span>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
 </code></pre>
-<blockquote>
-<p>注意上述代码使用的是iloc[: , 2]函数，2是索引，等价于loc[:, ‘Province&#x2F;State’]，就是把索引换成了列名。</p>
-</blockquote>
-<p>输入结果如下：</p>
-<p><img src="/2023/05/21/python-shu-ju-qing-xi/image-20230522120909870.png" alt="image-20230522120909870"></p>
-<h4 id="4-通过可视化的方法查看缺失值"><a href="#4-通过可视化的方法查看缺失值" class="headerlink" title="4. 通过可视化的方法查看缺失值"></a>4. 通过可视化的方法查看缺失值</h4><p>代码如下:</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> missingno <span class="token keyword">as</span> msno
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-dataset <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'./covid_19_data/covid_19_data.csv'</span><span class="token punctuation">)</span>
-msno<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>df<span class="token operator">=</span>dataset<span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
 </code></pre>
-<p>可视化图如下：</p>
-<p><img src="/2023/05/21/python-shu-ju-qing-xi/image-20230522121553014.png" alt="image-20230522121553014+python数据清洗/"></p>
-<blockquote>
-<p>白色缝隙表示缺失值，从图中可以看出，只有第三列 Province&#x2F;State 有缺失值。</p>
-</blockquote>
-<h5 id="5-缺失值填补"><a href="#5-缺失值填补" class="headerlink" title="5. 缺失值填补"></a>5. 缺失值填补</h5><p>填补的方式可以用本列的中位数或者平均数，也可以用unknown，具体代码如下：</p>
-<pre class=" language-python"><code class="language-python"> dataset<span class="token punctuation">[</span><span class="token string">'Province/State'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">'Unknown'</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
 </code></pre>
-<p>上述代码使用 ‘Unknown’进行填充，填充之后重新绘制图片，结果如下图所示：</p>
-<p><img src="/2023/05/21/python-shu-ju-qing-xi/image-20230522122105535.png" alt="image-20230522122105535"></p>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
                 
             </div>
@@ -557,7 +441,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhaohe6.github.io/2023/05/21/python-shu-ju-qing-xi/">https://zhaohe6.github.io/2023/05/21/python-shu-ju-qing-xi/</a>
+                    <a href="https://zhaohe6.github.io/2021/01/07/hexo-ming-ling/">https://zhaohe6.github.io/2021/01/07/hexo-ming-ling/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -595,12 +479,12 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">机器学习</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
                                 </a>
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">博客开发工具</span>
                                 </a>
                             
                         </div>
@@ -950,13 +834,13 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/04/30/git-chang-yong-ming-ling-yu-gui-fan/">
+                <a href="/2023/01/08/ni-bu-zhi-dao-de-js-shang-juan-di-er-bu-fen/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Git常用命令与规范">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="你不知道的JS上卷第二部分">
                         
-                        <span class="card-title">Git常用命令与规范</span>
+                        <span class="card-title">你不知道的JS上卷第二部分</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -967,12 +851,16 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-30
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-08
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Zhao He
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -980,8 +868,12 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/">
-                        <span class="chip bg-color">-Git代码管理</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>
@@ -992,16 +884,16 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2023/04/15/xian-xing-hui-gui-yu-ce/">
+                <a href="/2021/01/07/hexo-ming-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="线性回归预测">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">线性回归预测</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1012,33 +904,30 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    工具
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">机器学习</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
-                        <span class="chip bg-color">线性回归</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
-                        <span class="chip bg-color">梯度下降</span>
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">博客开发工具</span>
                     </a>
                     
                 </div>

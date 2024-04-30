@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Git常用命令与规范</title>
+      <link href="/2024/04/30/git-chang-yong-ming-ling-yu-gui-fan/"/>
+      <url>/2024/04/30/git-chang-yong-ming-ling-yu-gui-fan/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre><code>git branch -a</code></pre><blockquote><p>解释：查看所有的分支，包括本地分支和远程分支。白色的代表本地分支，绿色的代表本地工作分支，共色的代表远程分支，HEAD指向origin&#x2F;main表示远程的默认分支是main</p></blockquote><p><img src="/2024/04/30/git-chang-yong-ming-ling-yu-gui-fan/image-20240430114141556.png" alt="image-20240430114141556"></p><pre><code>git branch --set-upstream-to origin/zh-branch-remote</code></pre><blockquote><p>解释：将本地当前所在分支和远程zh-branch-remote分支建立映射关系。这个命令其实没有什么用，如果不用上面的命令手动建立联系，我们用-vv参数是看不到映射关系的。我们一般保证本地分支和远程的分支是同一个名字，之后使用</p></blockquote><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push origin zhbranch</code></pre><blockquote><p>即可，这样就会在远程创建一个同名的分支，并且同名分支和本地分支会建立联系，但是使用-vv命令并不能看到建立的映射关系，所以-vv命令不怎么智能，不要以来这个命令。随后开发完成之后使用</p></blockquote><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push origin zhbranch</code></pre><blockquote><p>这个命令即可将本地分支推送到远程对应名字的分支</p></blockquote><p><img src="/2024/04/30/git-chang-yong-ming-ling-yu-gui-fan/image-20240430121319536.png" alt="image-20240430121319536"></p><h3 id="多人协作步骤"><a href="#多人协作步骤" class="headerlink" title="多人协作步骤"></a>多人协作步骤</h3><ol><li><p>克隆代码到本地</p><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token string">""</span></code></pre></li><li><p>创建自己的分支</p><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -b newbranch</code></pre></li><li><p>编写代码</p></li><li><p>提交之前pull一下合并代码</p></li><li><p>有冲突的地方解决一下冲突</p></li><li><p>push到远程仓库自己名字的分支</p></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> -Git代码管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python数据清洗</title>
       <link href="/2023/05/21/python-shu-ju-qing-xi/"/>
       <url>/2023/05/21/python-shu-ju-qing-xi/</url>
@@ -169,8 +188,8 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="/2021/01/07/hello-world/"/>
-      <url>/2021/01/07/hello-world/</url>
+      <link href="/2021/01/07/hexo-ming-ling/"/>
+      <url>/2021/01/07/hexo-ming-ling/</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
